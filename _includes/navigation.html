@@ -1,0 +1,10 @@
+<nav>
+  <h2 class="modernist-header">Sergio Pantoja</h2>
+  <div class="tabs">
+    {% for item in site.data.navigation %}
+      <a class="modernist-tab" href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
+        {{ item.name }}
+      </a>
+    {% endfor %}
+  </div>
+</nav>
