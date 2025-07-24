@@ -5,6 +5,13 @@
 
 html {
   background-color: #FDF0D5;
+  overflow: auto;
+  scrollbar-gutter: stable both-edges;
+}
+
+#main {
+  width: 100%;
+  padding-right: 10px;
 }
 
 .modernist-header {

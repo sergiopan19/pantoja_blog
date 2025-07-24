@@ -6,12 +6,17 @@
 
 html {
     background-color: #FDF0D5;
+    overflow: auto;
+    scrollbar-gutter: stable both-edges;
 }
 
 #main {
     // margin: 30px 8px;
     // padding: 30px;
     // border-radius: 5px;
+    width: 100%;
+    
+    padding-right: 10px;
 }
 
 .modernist-header{
@@ -53,13 +58,14 @@ nav {
 
     margin: 0;
     padding-left: 100px;
+    // padding-right: 1000px;
     border-radius: 5px;
 
     height: 115px;
     width: 100%;
     min-width: 1000px;
     line-height: 50px;
-    // margin: 0 auto 0 auto;
+    // margin: 0 20px 0 -20px;
     // margin-right: 0px;
     padding: 0;
     align-items: right;
