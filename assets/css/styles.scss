@@ -11,9 +11,6 @@ html {
 }
 
 #main {
-    // margin: 30px 8px;
-    // padding: 30px;
-    // border-radius: 5px;
     width: 100%;
     
     padding-right: 10px;
@@ -58,15 +55,12 @@ nav {
 
     margin: 0;
     padding-left: 100px;
-    // padding-right: 1000px;
     border-radius: 5px;
 
     height: 115px;
     width: 100%;
     min-width: 1000px;
     line-height: 50px;
-    // margin: 0 20px 0 -20px;
-    // margin-right: 0px;
     padding: 0;
     align-items: right;
     background: #C1121F;
@@ -99,17 +93,12 @@ a :hover {
 }
 
 .content {
-    // background-color: #303030;
     font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     color: #003049;
     height:auto;
     width:auto;
     border-radius: 30px;
 }
-
-// .content ul {
-//     list-style: none;
-// }
 
 .content li {
     text-decoration: none;
@@ -138,25 +127,19 @@ a :hover {
     box-sizing: border-box;
     padding: var(--gap);
 
-    // height: auto;
     display: grid;
     grid-template-columns: repeat(var(--num-cols), 1fr);
     grid-auto-rows: var(--row-height);
     gap: var(--gap);
-    // align-items: start;
     overflow: hidden;
 }
 
 .gallery img {
     width: 100%;
     height: auto;
-    // object-fit: contain;
     border: solid black 2px;
     position: relative;
     display: block;
-    // grid-row: span 1;
-    // box-shadow: 20px 20px 0 0 #669BBC;
-    // outline: solid #162521 2px;
 }
 
 .gallery img:hover {
@@ -166,13 +149,11 @@ a :hover {
 //Wrapper
 .gallery .box-shadow-wrapper {
     position: relative;
-    // display: inline-block;
     width: 100%;
     height: auto;
 }
 
 .gallery .box-shadow-wrapper::before {
-    // display: block;
     position: absolute;
     content: " ";
     top: 25px;
@@ -195,31 +176,6 @@ a :hover {
     background-color: #71bd0e;
 }
 
-//Pre change colors
-.gallery img.blue  {
-    box-shadow: 24.5px 24.5px 0 -1.5px #669BBC, 25px 25px 0 0 black;
-}
-
-.gallery img.red {
-    box-shadow: 24.5px 24.5px 0 -1.5px #C1121F, 25px 25px 0 0 black;
-}
-
-.gallery img.green {
-    box-shadow: 24.5px 24.5px 0 -1.5px #71bd0e, 25px 25px 0 0 black;
-}
-
-// .image-wrapper {
-//     background: #FDF0D5;
-//     position: inherit;
-//     border: 2px solid black;
-//     box-shadow: 6px 6px 0 black;
-//     padding: 0;
-// }
-
-// .gallery img.portrait {
-//   grid-row: span 2;
-// }
-
 .gallery .box-shadow-wrapper.portrait {
   grid-row: span 2;
 }
@@ -234,26 +190,6 @@ a :hover {
         --row-height: auto;
     }
 }
-// .gallery {
-//     width: 100%;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     margin: 5px;
-//     // border: 1px solid #ccc;
-//     gap: clamp(1rem, 1.5vw, 1.25rem)
-//     // width: 350px;
-// }
-
-// .gallery img {
-// //   width: 100%;
-//   max-width: 512px;
-//   height: 100%;
-//   margin: 0;
-//   position: relative;  
-//   display: block;
-//   height: auto;
-// }
 
 .blog-posts ul {
     list-style: none;

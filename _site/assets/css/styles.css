@@ -155,18 +155,6 @@ a :hover {
   background-color: #71bd0e;
 }
 
-.gallery img.blue {
-  box-shadow: 24.5px 24.5px 0 -1.5px #669BBC, 25px 25px 0 0 black;
-}
-
-.gallery img.red {
-  box-shadow: 24.5px 24.5px 0 -1.5px #C1121F, 25px 25px 0 0 black;
-}
-
-.gallery img.green {
-  box-shadow: 24.5px 24.5px 0 -1.5px #71bd0e, 25px 25px 0 0 black;
-}
-
 .gallery .box-shadow-wrapper.portrait {
   grid-row: span 2;
 }
