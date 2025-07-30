@@ -131,30 +131,72 @@ a :hover {
 }
 
 .gallery {
-    --gap: 68px;
+    --gap: 64px;
     --num-cols: 3;
-    //--row-height: 300px;
+    --row-height: 275px;
 
     box-sizing: border-box;
     padding: var(--gap);
 
-    height: auto;
+    // height: auto;
     display: grid;
     grid-template-columns: repeat(var(--num-cols), 1fr);
     grid-auto-rows: var(--row-height);
     gap: var(--gap);
+    // align-items: start;
+    overflow: hidden;
 }
 
 .gallery img {
     width: 100%;
     height: auto;
-    object-fit: contain;
+    // object-fit: contain;
     border: solid black 2px;
+    position: relative;
+    display: block;
+    // grid-row: span 1;
     // box-shadow: 20px 20px 0 0 #669BBC;
     // outline: solid #162521 2px;
 }
 
-.gallery img.blue {
+.gallery img:hover {
+    opacity: 25%;
+}
+
+//Wrapper
+.gallery .box-shadow-wrapper {
+    position: relative;
+    // display: inline-block;
+    width: 100%;
+    height: auto;
+}
+
+.gallery .box-shadow-wrapper::before {
+    // display: block;
+    position: absolute;
+    content: " ";
+    top: 25px;
+    left: 30px;
+    width: 100%;
+    height: 100%;
+    outline: solid black 2px;
+}
+
+//post-change colors
+.box-shadow-wrapper.blue::before{
+    background-color: #669BBC;
+}
+
+.box-shadow-wrapper.red::before{
+    background-color: #C1121F;
+}
+
+.box-shadow-wrapper.green::before{
+    background-color: #71bd0e;
+}
+
+//Pre change colors
+.gallery img.blue  {
     box-shadow: 24.5px 24.5px 0 -1.5px #669BBC, 25px 25px 0 0 black;
 }
 
@@ -174,8 +216,16 @@ a :hover {
 //     padding: 0;
 // }
 
-.gallery img.portrait {
+// .gallery img.portrait {
+//   grid-row: span 2;
+// }
+
+.gallery .box-shadow-wrapper.portrait {
   grid-row: span 2;
+}
+
+.gallery .box-shadow-wrapper.landscape {
+    grid-row: span 1;
 }
 
 @media screen and (max-width: 1024px) {
