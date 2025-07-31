@@ -5,6 +5,12 @@
 
 html {
   background-color: #FDF0D5;
+  overflow: auto;
+  scrollbar-gutter: stable both-edges;
+}
+
+#main {
+  width: 100%;
 }
 
 .modernist-header {
@@ -14,8 +20,8 @@ html {
   color: white;
   letter-spacing: 0.2em;
   font-size: 3rem;
-  text-shadow: 0.07em 0.07em 0 #FF3743, 0.1em 0.1em 0 white;
-  padding: 25px 50px 0 50px;
+  text-shadow: 0.07em 0.07em 0 #669BBC, 0.1em 0.1em 0 white;
+  padding: 0 50px 0 50px;
 }
 
 .modernist-tab {
@@ -25,7 +31,7 @@ html {
   color: white;
   letter-spacing: 0.2em;
   font-size: 1.5rem;
-  text-shadow: 0.07em 0.07em 0 #FF3743, 0.1em 0.1em 0 white;
+  text-shadow: 0.07em 0.07em 0 #669BBC, 0.1em 0.1em 0 white;
 }
 
 .modernist-tab:hover {
@@ -38,29 +44,30 @@ html {
 nav {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  overflow: hidden;
   margin: 0;
-  padding-left: 100px;
-  border-radius: 5px;
-  height: 115px;
+  height: 120px;
   width: 100%;
-  min-width: 1000px;
   line-height: 50px;
-  padding: 0;
-  align-items: right;
+  align-items: center;
   background: #C1121F;
+  border: solid black 2px;
 }
 
 .tabs {
   display: flex;
-  justify-content: space-between;
-  width: 40%;
-  max-width: 2000px;
-  padding: 25px 50px 0 50px;
+  justify-content: center;
+  gap: 3rem;
+  flex: 0;
+  width: 100%;
+  max-width: 100%;
+  margin-right: 50px;
 }
 
 nav h2 {
   margin: 0;
-  width: 300px;
+  width: auto;
 }
 
 nav a {
@@ -77,7 +84,7 @@ a :hover {
 
 .content {
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  color: #003049;
+  color: black;
   height: auto;
   width: auto;
   border-radius: 30px;
@@ -90,50 +97,112 @@ a :hover {
 .content h1 {
   font-family: six caps;
   font-size: 3rem;
-  color: #003049;
+  color: black;
   border-bottom: solid 1px black;
   text-align: center;
 }
 
 .gallery {
-  --gap: 68px;
+  --gap: 64px;
   --num-cols: 3;
+  --row-height: auto;
   box-sizing: border-box;
   padding: var(--gap);
-  height: auto;
   display: grid;
   grid-template-columns: repeat(var(--num-cols), 1fr);
   grid-auto-rows: var(--row-height);
   gap: var(--gap);
+  overflow: hidden;
 }
 
 .gallery img {
   width: 100%;
   height: auto;
-  object-fit: contain;
   border: solid black 2px;
+  position: relative;
+  display: block;
 }
 
-.gallery img.blue {
-  box-shadow: 24.5px 24.5px 0 -1.5px #669BBC, 25px 25px 0 0 black;
+.gallery .box-shadow-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
-.gallery img.red {
-  box-shadow: 24.5px 24.5px 0 -1.5px #C1121F, 25px 25px 0 0 black;
+.gallery .box-shadow-wrapper::before {
+  position: absolute;
+  content: " ";
+  top: 25px;
+  left: 30px;
+  width: 100%;
+  height: 100%;
+  outline: solid black 2px;
+  background-color: transparent;
+  z-index: 0;
 }
 
-.gallery img.green {
-  box-shadow: 24.5px 24.5px 0 -1.5px #71bd0e, 25px 25px 0 0 black;
+.box-shadow-wrapper:hover .hover-text {
+  opacity: 1;
+  visibility: visible;
+  z-index: 3;
 }
 
-.gallery img.portrait {
+.box-shadow-wrapper:hover::before {
+  z-index: 3;
+  opacity: 1;
+}
+
+.box-shadow-wrapper.blue::before {
+  background-color: #669BBC;
+}
+
+.box-shadow-wrapper.red::before {
+  background-color: #C1121F;
+}
+
+.box-shadow-wrapper.green::before {
+  background-color: #71bd0e;
+}
+
+.box-shadow-wrapper.yellow::before {
+  background-color: #FFD447;
+}
+
+.gallery .box-shadow-wrapper.portrait {
   grid-row: span 2;
+}
+
+.gallery .box-shadow-wrapper.landscape {
+  grid-row: span 1;
+}
+
+.hover-text {
+  position: absolute;
+  height: auto;
+  top: 60%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: clamp(3rem, 5vw, 4rem);
+  font-family: "Six Caps", sans-serif;
+  text-transform: uppercase;
+  opacity: 0;
+  text-align: center;
+  white-space: normal;
 }
 
 @media screen and (max-width: 1024px) {
   .gallery {
     --num-cols: 1;
     --row-height: auto;
+  }
+  nav {
+    align-items: center;
+  }
+  .tabs {
+    max-width: 100%;
+    justify-content: center;
+    margin: auto;
   }
 }
 .blog-posts ul {
