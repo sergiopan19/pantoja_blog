@@ -11,7 +11,6 @@ html {
 
 #main {
   width: 100%;
-  padding-right: 10px;
 }
 
 .modernist-header {
@@ -21,8 +20,8 @@ html {
   color: white;
   letter-spacing: 0.2em;
   font-size: 3rem;
-  text-shadow: 0.07em 0.07em 0 #FF3743, 0.1em 0.1em 0 white;
-  padding: 25px 50px 0 50px;
+  text-shadow: 0.07em 0.07em 0 #669BBC, 0.1em 0.1em 0 white;
+  padding: 0 50px 0 50px;
 }
 
 .modernist-tab {
@@ -32,7 +31,7 @@ html {
   color: white;
   letter-spacing: 0.2em;
   font-size: 1.5rem;
-  text-shadow: 0.07em 0.07em 0 #FF3743, 0.1em 0.1em 0 white;
+  text-shadow: 0.07em 0.07em 0 #669BBC, 0.1em 0.1em 0 white;
 }
 
 .modernist-tab:hover {
@@ -45,29 +44,30 @@ html {
 nav {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  overflow: hidden;
   margin: 0;
-  padding-left: 100px;
-  border-radius: 5px;
-  height: 115px;
+  height: 120px;
   width: 100%;
-  min-width: 1000px;
   line-height: 50px;
-  padding: 0;
-  align-items: right;
+  align-items: center;
   background: #C1121F;
+  border: solid black 2px;
 }
 
 .tabs {
   display: flex;
-  justify-content: space-between;
-  width: 40%;
-  max-width: 2000px;
-  padding: 25px 50px 0 50px;
+  justify-content: center;
+  gap: 3rem;
+  flex: 0;
+  width: 100%;
+  max-width: 100%;
+  margin-right: 50px;
 }
 
 nav h2 {
   margin: 0;
-  width: 300px;
+  width: auto;
 }
 
 nav a {
@@ -84,7 +84,7 @@ a :hover {
 
 .content {
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  color: #003049;
+  color: black;
   height: auto;
   width: auto;
   border-radius: 30px;
@@ -97,7 +97,7 @@ a :hover {
 .content h1 {
   font-family: six caps;
   font-size: 3rem;
-  color: #003049;
+  color: black;
   border-bottom: solid 1px black;
   text-align: center;
 }
@@ -182,9 +182,8 @@ a :hover {
   top: 60%;
   left: 55%;
   transform: translate(-50%, -50%);
-  width: fit-content;
   color: black;
-  font-size: min(4rem, 15vw);
+  font-size: clamp(3rem, 5vw, 4rem);
   font-family: "Six Caps", sans-serif;
   text-transform: uppercase;
   opacity: 0;
@@ -196,6 +195,14 @@ a :hover {
   .gallery {
     --num-cols: 1;
     --row-height: auto;
+  }
+  nav {
+    align-items: center;
+  }
+  .tabs {
+    max-width: 100%;
+    justify-content: center;
+    margin: auto;
   }
 }
 .blog-posts ul {
